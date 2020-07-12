@@ -98,7 +98,7 @@ io.on('connection', (socket) => {
 
         socket.join(user.room) // Specially made feature for the server
         
-        socket.emit('message', generateMessage('Admin', 'Welcome to Hope-Scotch\'s Chat'))
+        socket.emit('message', generateMessage('Admin', 'Welcome to Scotch Chat'))
         socket.broadcast.to(user.room).emit('message', generateMessage('Admin', `${user.username} has joined`)) // Send to everybody except this particular socket
         io.to(user.room).emit('roomData', {
             room: user.room,
